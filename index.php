@@ -1,0 +1,783 @@
+<?php
+$judul = "/nabila_porto/assets/judul.png";
+$accjudul = "/nabila_porto/assets/judul acc.png";
+
+$deskripsi_hero = "Saya menggabungkan logika pemrograman dengan estetika visual untuk menciptakan produk digital yang fungsional dan menarik.";
+
+$link_foto_profil = "/nabila_porto/assets/profil.png";
+$link_bg_hero = "/nabila_porto/assets/bg banner.png";
+?>
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Nabila Frida</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="icon" href="/nabila_porto/assets/icon.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .experience-section {
+            background:
+                linear-gradient(
+                    to bottom,
+                    #632024 0%,
+                    #382d42 18%,
+                    #25344F 48%,
+                    #526983 72%,
+                    #8da1b5 100%
+                );
+        }
+    </style>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'space-cadet': '#25344F',
+                        'slate-gray': '#617891',
+                        'tan': '#D5B893',
+                        'coffee': '#6F4D38',
+                        'caput-mortuum': '#632024',
+                    },
+
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="text-space-cadet font-sans bg-space-cadet">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full bg-space-cadet/95 text-tan backdrop-blur-md shadow-md z-50" data-aos="fade-down">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif font-bold text-xl tracking-wider text-tan hover:text-white transition">
+                PORTFOLIO.
+            </a>
+
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#experience" class="hover:text-white transition">Experience</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
+                <a href="#skills" class="hover:text-white transition">Skills</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center text-center px-4 md:px-6 bg-cover bg-center bg-no-repeat" style="background-image: url('<?= $link_bg_hero ?>');">
+        
+        <div class="absolute inset-0 bg-space-cadet/20"></div>
+
+        <div class="relative z-10 w-full max-w-[950px] mx-auto pt-24 pb-12 px-4 flex flex-col items-center justify-center">
+            
+            <!-- Judul -->
+            <div class="relative mx-auto mb-6 w-full max-w-xs sm:max-w-md md:max-w-2xl aspect-video flex justify-center items-center">
+                <img src="<?= $judul ?>" alt="Judul" class="relative z-10 w-full h-full object-contain" data-aos="fade-down" data-aos-duration="800">
+                <img src="<?= $accjudul ?>" alt="Aksesoris Judul" class="absolute inset-0 z-20 w-full h-full object-contain pointer-events-none" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+            </div>
+
+            <!-- Deskripsi -->
+            <p class="text-tan/90 text-sm sm:text-base md:text-lg max-w-2xl mb-8 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="500">
+                <?= $deskripsi_hero ?>
+            </p>
+
+            <!-- Button -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="700">
+                <a href="#projects" class="bg-caput-mortuum text-tan px-8 py-3 rounded-md font-semibold hover:bg-coffee hover:scale-105 transition-all duration-300 shadow-lg">
+                    View Projects
+                </a>
+                <a href="#contact" class="border-2 border-tan text-tan px-8 py-3 rounded-md font-semibold hover:bg-tan hover:text-space-cadet hover:scale-105 transition-all duration-300">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="relative py-20 md:py-28 px-4 sm:px-6 md:px-8 w-full bg-cover bg-center bg-no-repeat" style="background-image: url('/nabila_porto/assets/bg-about.png');">
+        <div class="container mx-auto relative z-10">
+
+            <!--  PROFIL  -->
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-24">
+                
+                <!-- Foto -->
+                <div class="flex justify-center" data-aos="fade-right">
+                    <div class="relative group w-full max-w-md">
+                        <a href="https://www.instagram.com/nabfrd_" target="_blank" rel="noopener noreferrer">
+                            <img src="<?= $link_foto_profil ?>" alt="Foto Profil" class="w-full h-auto object-cover rounded-2xl transition duration-500 group-hover:scale-105">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Deskripsi -->
+                <div class="flex flex-col gap-5 text-center md:text-left" data-aos="fade-left">
+                    <img src="/nabila_porto/assets/nama.png" alt="Nama" class="w-full max-w-xs sm:max-w-sm mx-auto md:mx-0">
+                    
+                    <div class="font-serif text-sm sm:text-base md:text-lg text-white space-y-4 leading-relaxed">
+                        <p>I am a fresh graduate in D-IV Informatics Management with a strong interest in Web Development and Visual Design. I enjoy building user-friendly websites and solving real-world problems through practical and creative solutions.</p>
+                        <p> I am passionate about learning new technologies, collaborating with others, and turning ideas into meaningful digital experiences.</p>
+                        <p> This portfolio showcases my selected web development projects and creative works.</p>
+                    </div>
+                </div>
+
+            </div>
+
+<!-- EDUCATION -->
+        <div class="flex justify-center" data-aos="fade-up">
+            <div class="w-full max-w-6xl flex flex-col items-center gap-6">
+                
+                <!-- Judul Education -->
+                <div class="relative group w-full max-w-md">
+                    <a href="https://eprints.polsri.ac.id/23358/" target="_blank" rel="noopener noreferrer">
+                        <img src="/nabila_porto/assets/judul edu.png" alt="Education" class="w-full h-auto object-contain rounded-2xl transition-transform duration-500 group-hover:scale-105">
+                    </a>
+                </div>
+
+                <!-- Isi Education -->
+                <div class="w-full flex justify-center">
+                    <img src="/nabila_porto/assets/isi edu.png" alt="Education Details" class="w-full h-auto max-w-full object-contain">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="relative min-h-screen py-4 px-6 overflow-hidden"
+        style="background: linear-gradient(to bottom, #632024 0%, #382d42 18%, #25344F 48%, #526983 72%, #8da1b5 100%);">
+
+        <!-- Garis Kanan (Dull/Redup dengan Opacity-15 & Grayscale) -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none bg-no-repeat bg-right-top bg-cover grayscale mix-blend-overlay"
+            style="background-image: url('/nabila_porto/assets/garis.png');"
+        ></div>
+
+        <!-- CONTENT CONTAINER -->
+        <div class="container mx-auto max-w-6xl relative z-10">
+
+            <!-- Header Experience (Center Aligned) -->
+            <div class="flex flex-col items-center text-center mb-5" data-aos="fade-down">
+                <div class="relative w-full max-w-md mx-auto">
+                    <img src="/nabila_porto/assets/judul exp.png" alt="Experience" class="w-full h-auto object-contain transition-transform duration-500">
+                </div>
+                <p class="text-white/70 max-w-xl mx-auto text-center">
+                    Experiences that shaped my skills in creativity, leadership, collaboration, and technology.
+                </p>
+            </div>
+
+            <!-- TIMELINE -->
+            <div class="relative max-w-5xl mx-auto">
+                
+                <!-- Central Line -->
+                <div 
+                    class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2"
+                    style="background: rgba(213, 184, 147, 0.4);"
+                ></div> 
+
+                <!-- EXPERIENCE 03 -->
+                <div class="relative grid md:grid-cols-2 gap-8 md:gap-12 items-start" data-aos="fade-up">
+                    <!-- Content (Left Side) -->
+                    <div class="md:text-right md:pr-10">
+                        <div class="relative overflow-hidden rounded-xl mb-4 h-48 sm:h-56 bg-white/5 border border-tan/20 shadow-lg group">
+                            <img src="/nabila_porto/assets/Dokumentasi Magang Pegadaian.jpg" alt="Internship" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <span class="text-tan text-sm font-semibold tracking-wider">Februari s.d Juni 2025</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">Front desk Administrator</h3>
+                        <p class="text-tan font-semibold mt-1 text-sm">PT. Pegadaian Palembang Branch Internship</p>
+                        <p class="text-white/70 mt-3 leading-relaxed text-sm sm:text-base">
+                            Assisted in the preparation and document archive of daily service, Handling more than 50 customer per week through text and phone calls, maintaning
+                            95% satisfacation rate and Developed a simulation website of vehicle loan application system to improve service
+                            efficiency.
+                        </p>
+                    </div>
+                    <div class="hidden md:block"></div>
+                    <div class="hidden md:block absolute left-1/2 top-8 transform -translate-x-1/2 z-10">
+                        <div class="w-4 h-4 rounded-full bg-tan shadow-[0_0_15px_rgba(213,184,147,0.8)] border-2 border-space-cadet"></div>
+                    </div>
+                </div>
+                
+                <!-- EXPERIENCE 04 -->
+                <div class="relative grid md:grid-cols-2 gap-8 md:gap-12 mb-16 items-start" data-aos="fade-left">
+                    <div class="hidden md:block"></div>
+                    <!-- Content (Right Side) -->
+                    <div class="md:pl-10">
+                        <div class="relative overflow-hidden rounded-xl mb-4 h-48 sm:h-56 bg-white/5 border border-tan/20 shadow-lg group">
+                            <img src="/nabila_porto/assets/Dokumentasi Magang Berdampak.jpg" alt="Secretary of Talent & Interest Department" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <span class="text-tan text-sm font-semibold tracking-wider">Oktober s.d Desember 2025</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">Data Entry Clerk</h3>
+                        <p class="text-tan font-semibold mt-1 text-sm">Regional Research and Development Agency (BALITBANGDA)</p>
+                        <p class="text-white/70 mt-3 leading-relaxed text-sm sm:text-base">
+                            Managed hundred s of data through collection, analysis, visualization, and reporting activities. Contributed to administrative and operational activities within a local government
+                            organization and Completed the final internship report, including data input on the South Sumatra
+                            Province One Data website (Satu Data Provinsi Sumatera Selatan)
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 top-8 transform -translate-x-1/2 z-10">
+                        <div class="w-4 h-4 rounded-full bg-tan shadow-[0_0_15px_rgba(213,184,147,0.8)] border-2 border-space-cadet"></div>
+                    </div>
+                </div> 
+            </div>
+
+            <!-- ORGANIZATION EXPERIENCE (URUT 2025 - 2023) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+
+                <!-- EXPERIENCE 01 (2025) -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-tan/20 shadow-lg flex flex-col h-full group" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl mb-4 aspect-square w-full bg-white/5">
+                    <a href="https://www.instagram.com/p/DLkH39Xy-e2/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">    
+                    <img src="/nabila_porto/assets/sekdep.png" alt="Secretary of Talent & Interest" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </a>
+                    </div>
+                    <span class="text-tan text-sm font-semibold tracking-wider">2025</span>
+                    <h3 class="font-serif text-xl font-bold text-white mt-1">Secretary of Talent & Interest</h3>
+                    <p class="text-tan font-semibold mt-1 text-sm">UKM SIMPONY</p>
+                    <p class="text-white/70 mt-3 leading-relaxed text-sm flex-grow">
+                        Managed administrative activities, documentation, correspondence, and internal coordination within the department.
+                    </p>
+                </div>
+
+                <!-- EXPERIENCE 02 (2025) -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-tan/20 shadow-lg flex flex-col h-full group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden rounded-xl mb-4 aspect-square w-full bg-white/5">
+                        <img src="/nabila_porto/assets/panit dekor.jpg" alt="Staff Dekorasi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <span class="text-tan text-sm font-semibold tracking-wider">2025</span>
+                    <h3 class="font-serif text-xl font-bold text-white mt-1">Staff Dekorasi</h3>
+                    <p class="text-tan font-semibold mt-1 text-sm">Panitia Gebyar Simpony 2025</p>
+                    <p class="text-white/70 mt-3 leading-relaxed text-sm flex-grow">
+                        Contributed to designing, preparing, and setting up artistic decorative elements for the main venue.
+                    </p>
+                </div>
+
+                <!-- EXPERIENCE 03 (2025) -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-tan/20 shadow-lg flex flex-col h-full group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-xl mb-4 aspect-square w-full bg-white/5">
+                        <img src="/nabila_porto/assets/kestari.JPG" alt="Penanggung Jawab Kestari" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <span class="text-tan text-sm font-semibold tracking-wider">2025</span>
+                    <h3 class="font-serif text-xl font-bold text-white mt-1">Penanggung Jawab Kestari</h3>
+                    <p class="text-tan font-semibold mt-1 text-sm">Panitia Musyawarah Besar UKM SIMPONY 2025</p>
+                    <p class="text-white/70 mt-3 leading-relaxed text-sm flex-grow">
+                        Managed secretarial tasks, administration, attendee registration, and official documentation for the grand assembly.
+                    </p>
+                </div>
+
+                <!-- EXPERIENCE 04 (2024) -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-tan/20 shadow-lg flex flex-col h-full group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden rounded-xl mb-4 aspect-square w-full bg-white/5">
+                    <a href="https://www.instagram.com/p/C8mTe2lPEE2/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">    
+                    <img src="/nabila_porto/assets/kabid.png" alt="Head of Graphics Division" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </a>    
+                </div>
+                    <span class="text-tan text-sm font-semibold tracking-wider">2024</span>
+                    <h3 class="font-serif text-xl font-bold text-white mt-1">Head of Graphics Division</h3>
+                    <p class="text-tan font-semibold mt-1 text-sm">UKM SIMPONY</p>
+                    <p class="text-white/70 mt-3 leading-relaxed text-sm flex-grow">
+                        Led the graphics team, developed visual concepts, trained division members, and managed creative design workflows.
+                    </p>
+                </div>
+
+                <!-- EXPERIENCE 05 (2024) -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-tan/20 shadow-lg flex flex-col h-full group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden rounded-xl mb-4 aspect-square w-full bg-white/5">
+                    <a href="https://www.instagram.com/p/DCyzt17B6-H/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">    
+                    <img src="/nabila_porto/assets/Sertifikat PJ Dekor Gebyar 2024.jpg" alt="Penanggung Jawab Dekorasi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </a>    
+                </div>
+                    <span class="text-tan text-sm font-semibold tracking-wider">2024</span>
+                    <h3 class="font-serif text-xl font-bold text-white mt-1">Penanggung Jawab Dekorasi</h3>
+                    <p class="text-tan font-semibold mt-1 text-sm">Panitia Gebyar Simpony 2024</p>
+                    <p class="text-white/70 mt-3 leading-relaxed text-sm flex-grow">
+                        Coordinated and supervised the decoration team to concept and execute event aesthetic themes successfully.
+                    </p>
+                </div>
+
+                <!-- EXPERIENCE 06 (2023) -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-tan/20 shadow-lg flex flex-col h-full group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative overflow-hidden rounded-xl mb-4 aspect-square w-full bg-white/5">
+                        <img src="/nabila_porto/assets/Sertifikat panitia sponsor gebyar 2023.jpg" alt="Staff Sponsorship" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <span class="text-tan text-sm font-semibold tracking-wider">2023</span>
+                    <h3 class="font-serif text-xl font-bold text-white mt-1">Staff Sponsorship</h3>
+                    <p class="text-tan font-semibold mt-1 text-sm">Panitia Gebyar Simpony 2023</p>
+                    <p class="text-white/70 mt-3 leading-relaxed text-sm flex-grow">
+                        Handled sponsorship proposals, build communication with external partners, and secured financial support for the event.
+                    </p>
+                </div>
+
+            </div>
+
+        <!-- SELECTED PROJECTS -->
+         <section id="projects" class="relative min-h-screen py-4 px-6 overflow-hidden">
+            <div class="mt-4 container mx-auto max-w-6xl">
+
+                <!-- Header Project (Center Aligned) -->
+                <div class="flex flex-col items-center text-center mb-14" data-aos="fade-up">
+                    <div class="relative w-full max-w-md mx-auto">
+                        <img src="/nabila_porto/assets/judul project.png" alt="Projects" class="w-full h-auto object-contain transition-transform duration-500">
+                    </div>
+                    <p class="text-white/70 max-w-xl mx-auto text-center"> Some of projects that represent my skills in web development and digital problem solving.</p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-2 gap-8">
+
+                    <!-- PROJECT 01 -->
+                    <div class="project-card bg-space-cadet rounded-2xl overflow-hidden shadow-xl border border-tan/20" data-aos="fade-up">
+                        <div class="h-64 bg-slate-gray overflow-hidden">
+                            <video src="/nabila_porto/assets/LAKSAMANA DEMO.mp4" class="project-image w-full h-full object-cover" autoplay muted loop playsinline>
+                            </video>
+                        </div>
+                        <div class="p-6 text-tan">
+                            <span class="text-xs tracking-widest text-tan/60">WEB DEVELOPMENT</span>
+                            <h3 class="text-2xl font-bold mt-2 mb-3">LAKSAMANA BPOM</h3>
+                            <p class="text-tan/70 leading-relaxed mb-5">
+                                Web application for estimating BPOM testing costs, recommending testing parameters, and monitoring testing status for MSME products.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-gray px-3 py-1.5 rounded-full">PHP</span>
+                                <span class="text-xs bg-slate-gray px-3 py-1.5 rounded-full">MySQL</span>
+                                <span class="text-xs bg-slate-gray px-3 py-1.5 rounded-full">Tailwind CSS</span>
+                                <span class="text-xs bg-slate-gray px-3 py-1.5 rounded-full">Apriori Algorithm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 02 -->
+                    <div class="project-card bg-space-cadet rounded-2xl overflow-hidden shadow-xl border border-tan/20" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-64 bg-slate-gray overflow-hidden">
+                            <video src="/nabila_porto/assets/DEMO SKK.mp4" class="project-image w-full h-full object-cover" autoplay muted loop playsinline>
+                            </video>
+                        </div>
+                        <div class="p-6 text-tan">
+                            <span class="text-xs tracking-widest text-tan/60">WEB DEVELOPMENT</span>
+                            <h3 class="text-2xl font-bold mt-2 mb-3">SIMULASI KREDIT KENDARAAN PT.Pegadaian</h3>
+                            <p class="text-tan/70 leading-relaxed mb-5">
+                                Simulation website of vehicle loan application system to improve service efficiency
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-gray px-3 py-1.5 rounded-full">HTML</span>
+                                <span class="text-xs bg-slate-gray px-3 py-1.5 rounded-full">CSS</span>
+                                <span class="text-xs bg-slate-gray px-3 py-1.5 rounded-full">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & CERTIFICATIONS -->
+    <section id="skills" class="relative py-4 px-6 bg-gradient-to-b from-[#8da3ba] via-[#b3ab9d] to-[#ecd1b0]">
+            
+        <!-- SKILLS HEADER -->
+        <div class="relative w-full max-w-md mx-auto" data-aos="fade-up">
+            <img src="/nabila_porto/assets/judul skill.png">
+        </div>
+
+        <!-- SKILLS GRID -->
+        <div class="grid md:grid-cols-2 px-60 gap-8 mb-20">
+
+            <!-- WEB DEVELOPMENT -->
+            <div class="bg-white/20 backdrop-blur-md p- sm:p-8 rounded-2xl border border-white/30 shadow-lg" data-aos="fade-up">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6">
+                    Web Development
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">HTML</span>
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">CSS / Tailwind</span>
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">JavaScript</span>
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">PHP</span>
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">MySQL</span>
+                </div>
+            </div>
+
+            <!-- CREATIVE -->
+            <div class="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/30 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6">
+                    Creative
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-[#5c4033] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">Illustration</span>
+                    <span class="bg-[#5c4033] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">Graphic Design</span>
+                    <span class="bg-[#5c4033] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">UI/UX</span>
+                    <span class="bg-[#5c4033] text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">Video Editing</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CERTIFICATIONS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 px-24 gap-8">
+            
+            <!-- CERTIFICATION 1: SEMESTA MEDIA -->
+            <div class="bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/40 shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                
+                <!-- Foto Rasio 1:1 -->
+                <img 
+                    src="/nabila_porto/assets/sertifikat SEMESTA MEDIA.jpg" 
+                    alt="Sertifikat Semesta Media" 
+                    class="w-full aspect-square object-cover bg-white/50 border border-white/40 rounded-xl mb-5 shadow-sm" 
+                    onerror="this.outerHTML='<div class=\'w-full aspect-square bg-white/50 border border-dashed border-slate-400 rounded-xl mb-5 flex items-center justify-center text-slate-500 text-sm font-medium shadow-sm\'>Foto Sertifikat (1:1)</div>'"
+                >
+                
+                <div class="text-sm font-bold tracking-wider text-slate-700 mb-2">TAHUN 2022</div>
+                <h3 class="text-lg font-extrabold text-slate-900 mb-2 leading-tight">
+                    SEMESTA MEDIA
+                    <span class="block text-base font-bold text-slate-800 mt-1">Pelatihan Web Development</span>
+                </h3>
+                <p class="text-slate-800 font-medium text-sm leading-relaxed mt-2">
+                    Memperdalam fundamental pengembangan web melalui pelatihan intensif yang berfokus pada perancangan struktur HTML dan implementasi kode secara langsung menggunakan teks editor Sublime.
+                </p>
+            </div>
+
+            <!-- CERTIFICATION 2: VSGA -->
+            <div class="bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/40 shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                
+                <!-- Foto Rasio 1:1 -->
+                <img 
+                    src="/nabila_porto/assets/Sertifikat BNSP.jpg" 
+                    alt="Sertifikat VSGA" 
+                    class="w-full aspect-square object-cover bg-white/50 border border-white/40 rounded-xl mb-5 shadow-sm" 
+                    onerror="this.outerHTML='<div class=\'w-full aspect-square bg-white/50 border border-dashed border-slate-400 rounded-xl mb-5 flex items-center justify-center text-slate-500 text-sm font-medium shadow-sm\'>Foto Sertifikat (1:1)</div>'"
+                >
+                
+                <div class="text-sm font-bold tracking-wider text-slate-700 mb-2">TAHUN 2023</div>
+                <h3 class="text-lg font-extrabold text-slate-900 mb-2 leading-tight">
+                    VSGA - BPSDM KOMINFO
+                    <span class="block text-base font-bold text-slate-800 mt-1">Junior Web Development</span>
+                </h3>
+                <p class="text-slate-800 font-medium text-sm leading-relaxed mt-2">
+                    Mengasah keahlian Junior Web Developer melalui program sertifikasi dengan fokus pada praktik coding HTML modern yang rapi dan efisien menggunakan Visual Studio Code.
+                </p>
+            </div>
+
+            <!-- CERTIFICATION 3: SYSTEM ANALYST -->
+            <div class="bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/40 shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                
+                <!-- Foto Rasio 1:1 -->
+                <img 
+                    src="/nabila_porto/assets/ujikom sa.jpeg" 
+                    alt="Sertifikat System Analyst" 
+                    class="w-full aspect-square object-cover bg-white/50 border border-white/40 rounded-xl mb-5 shadow-sm" 
+                    onerror="this.outerHTML='<div class=\'w-full aspect-square bg-white/50 border border-dashed border-slate-400 rounded-xl mb-5 flex items-center justify-center text-slate-500 text-sm font-medium shadow-sm\'>Foto Sertifikat (1:1)</div>'"
+                >
+                
+                <div class="text-sm font-bold tracking-wider text-slate-700 mb-2">TAHUN 2026</div>
+                <h3 class="text-lg font-extrabold text-slate-900 mb-2 leading-tight">
+                    SYSTEM ANALYST
+                    <span class="block text-base font-bold text-slate-800 mt-1">Sertifikasi & Praktik</span>
+                </h3>
+                <p class="text-slate-800 font-medium text-sm leading-relaxed mt-2">
+                    Bertanggung jawab dalam mengevaluasi alur sistem, memodelkan proses bisnis, dan menganalisis kebutuhan teknis website guna merancang solusi digital yang efisien, scalable, dan tepat sasaran.
+                </p>
+            </div>
+        </div>
+
+        <!-- Creative works -->
+        <section id="creative" class="py-4 px-6">
+            <div class="container mx-auto max-w-6xl">
+
+                <div class="relative w-full max-w-md mx-auto" data-aos="fade-up">
+                    <img src="/nabila_porto/assets/judul creative.png" alt="Creative Works Header">
+                </div>
+
+                <!-- CAROUSEL CONTAINER -->
+                <div class="relative w-full max-w-5xl mx-auto px-4 py-12 overflow-hidden">
+
+                    <!-- Tombol Navigasi Kiri -->
+                    <button id="prevBtn" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-slate-900/80 hover:bg-slate-900 text-white p-3 rounded-full shadow-xl backdrop-blur-md transition-all duration-200 focus:outline-none hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <!-- Tombol Navigasi Kanan -->
+                    <button id="nextBtn" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 bg-slate-900/80 hover:bg-slate-900 text-white p-3 rounded-full shadow-xl backdrop-blur-md transition-all duration-200 focus:outline-none hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <!-- Track Slider (Container Gambar & Title) -->
+                    <div id="carouselViewport" class="overflow-hidden py-8">
+                        <div id="carouselTrack" class="flex gap-6 items-center transition-transform duration-500 ease-out">
+
+                            <!-- ITEM 1 -->
+                            <div class="carousel-item w-56 sm:w-64 shrink-0 flex flex-col items-center gap-3 transition-all duration-500 transform cursor-pointer">
+                                <div class="w-full aspect-[3/4] bg-slate-gray relative overflow-hidden rounded-2xl shadow-lg">
+                                    <img src="/nabila_porto/creative/poster.jpg" alt="Poster" class="w-full h-full object-cover">
+                                </div>
+                                <span class="carousel-title text-slate-900 font-bold text-base text-center tracking-wide">
+                                    Poster Design
+                                </span>
+                            </div>
+
+                            <!-- ITEM 2 -->
+                            <div class="carousel-item w-56 sm:w-64 shrink-0 flex flex-col items-center gap-3 transition-all duration-500 transform cursor-pointer">
+                                <div class="w-full aspect-[3/4] bg-slate-gray relative overflow-hidden rounded-2xl shadow-lg">
+                                    <img src="/nabila_porto/creative/yawa redraw.png" alt="Illust" class="w-full h-full object-cover">
+                                </div>
+                                <span class="carousel-title text-slate-900 font-bold text-base text-center tracking-wide">
+                                    Character Illustration
+                                </span>
+                            </div>
+
+                            <!-- ITEM 3 -->
+                            <div class="carousel-item w-56 sm:w-64 shrink-0 flex flex-col items-center gap-3 transition-all duration-500 transform cursor-pointer">
+                                <div class="w-full aspect-[3/4] bg-slate-gray relative overflow-hidden rounded-2xl shadow-lg">
+                                    <img src="/nabila_porto/creative/shoulder.png" alt="Illust" class="w-full h-full object-cover">
+                                </div>
+                                <span class="carousel-title text-slate-900 font-bold text-base text-center tracking-wide">
+                                    Character Illustration
+                                </span>
+                            </div>
+
+                            <!-- ITEM 4 -->
+                            <div class="carousel-item w-56 sm:w-64 shrink-0 flex flex-col items-center gap-3 transition-all duration-500 transform cursor-pointer">
+                                <div class="w-full aspect-[3/4] bg-slate-gray relative overflow-hidden rounded-2xl shadow-lg">
+                                    <img src="/nabila_porto/creative/dor.png" alt="Illust" class="w-full h-full object-cover">
+                                </div>
+                                <span class="carousel-title text-slate-900 font-bold text-base text-center tracking-wide">
+                                    Character Illustration
+                                </span>
+                            </div>
+
+                            <!-- ITEM 5 -->
+                            <div class="carousel-item w-56 sm:w-64 shrink-0 flex flex-col items-center gap-3 transition-all duration-500 transform cursor-pointer">
+                                <div class="w-full aspect-[3/4] bg-slate-gray relative overflow-hidden rounded-2xl shadow-lg">
+                                    <img src="/nabila_porto/creative/mockup gebyar.png" alt="Mockup" class="w-full h-full object-cover">
+                                </div>
+                                <span class="carousel-title text-slate-900 font-bold text-base text-center tracking-wide">
+                                    Gebyar Simpony 2025 Mockup
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="relative py-24 px-6 overflow-hidden bg-space-cadet text-center">
+        
+        <!-- Decorative Glow Background Effects -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-tan/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto max-w-3xl relative z-10">
+            
+            <!-- Badge -->
+            <div data-aos="fade-down">
+                <span class="inline-block text-xs font-bold tracking-widest text-tan/80 uppercase bg-white/5 border border-tan/20 px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm">
+                    Get In Touch
+                </span>
+            </div>
+
+            <!-- Title -->
+            <h2 class="font-serif text-4xl sm:text-5xl font-extrabold mb-6 text-tan tracking-tight leading-tight" data-aos="zoom-in">
+                Let's Work Together
+            </h2>
+
+            <!-- Description -->
+            <p class="text-tan/70 mb-12 text-base sm:text-lg max-w-xl mx-auto leading-relaxed" data-aos="fade-up">
+                Interested in collaborating or have a project in mind? Feel free to reach out through any of the platforms below.
+            </p>
+
+            <!-- Action / Social Links -->
+            <div class="flex flex-wrap justify-center items-center gap-4" data-aos="fade-up" data-aos-delay="200">
+          
+                <!-- Email Button (Dihapus spasinya) -->
+                <a href="mailto:nabilafridamic@gmail.com" class="inline-flex items-center gap-2.5 bg-tan text-space-cadet px-6 py-3.5 rounded-full font-bold shadow-lg hover:bg-white hover:scale-105 hover:shadow-tan/20 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Email Me</span>
+                </a>
+
+                <!-- GitHub Button -->
+                <a href="https://github.com/nabfrd" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-white/10 text-tan border border-tan/20 backdrop-blur-md px-6 py-3.5 rounded-full font-bold shadow-md hover:bg-white/20 hover:border-tan/40 hover:-translate-y-1 transition-all duration-300">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+
+                <!-- LinkedIn Button (Ditambahkan https://) -->
+                <a href="https://linkedin.com/in/nabila-frida-safitri-56210734a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-white/10 text-tan border border-tan/20 backdrop-blur-md px-6 py-3.5 rounded-full font-bold shadow-md hover:bg-white/20 hover:border-tan/40 hover:-translate-y-1 transition-all duration-300">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+
+                <!-- Instagram Button (Ditambahkan https://) -->
+                <a href="https://www.instagram.com/nabfrd_" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-white/10 text-tan border border-tan/20 backdrop-blur-md px-6 py-3.5 rounded-full font-bold shadow-md hover:bg-white/20 hover:border-tan/40 hover:-translate-y-1 transition-all duration-300">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('carouselTrack');
+            const viewport = document.getElementById('carouselViewport');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Ambil item asli
+            const originalItems = Array.from(track.children);
+            const N = originalItems.length;
+
+            if (N === 0) return;
+
+            // 1. DUPLIKASI ITEM (Untuk Infinite Loop tanpa jeda)
+            // Membuat 3 set data: [Set Sebelum, Set Utama, Set Sesudah]
+            const setBefore = originalItems.map(item => item.cloneNode(true));
+            const setAfter = originalItems.map(item => item.cloneNode(true));
+            
+            track.innerHTML = '';
+            const allItems = [...setBefore, ...originalItems, ...setAfter];
+            allItems.forEach(item => track.appendChild(item));
+
+            let currentIndex = N; // Mulai di item pertama dari Set Utama
+            let isTransitioning = false;
+
+            // 2. FUNGSI UPDATE POSISI & EFEK VISUAL
+            function updateCarousel(withTransition = true) {
+                if (withTransition) {
+                    track.style.transition = 'transform 500ms cubic-bezier(0.25, 1, 0.5, 1)';
+                } else {
+                    track.style.transition = 'none';
+                }
+
+                const viewportWidth = viewport.offsetWidth;
+                const itemWidth = allItems[0].offsetWidth;
+                const gap = 24; // gap-6 (24px)
+
+                // Hitung koordinat tengah
+                const centerPosition = (viewportWidth / 2) - (itemWidth / 2);
+                const translateX = centerPosition - (currentIndex * (itemWidth + gap));
+
+                track.style.transform = `translateX(${translateX}px)`;
+
+                // Atur efek visual untuk tiap item (Aktif vs Tidak Aktif)
+                allItems.forEach((item, index) => {
+                    const title = item.querySelector('.carousel-title');
+                    item.style.transition = withTransition ? 'all 500ms cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
+
+                    if (index === currentIndex) {
+                        // Item Aktif (Tengah): Lebih besar & terang
+                        item.style.transform = 'scale(1.05)';
+                        item.style.opacity = '1';
+                        item.style.filter = 'blur(0px)';
+                        item.style.zIndex = '10';
+                        if (title) title.style.opacity = '1';
+                    } else {
+                        // Item Samping (Kiri & Kanan): Lebih kecil & sedikit samar
+                        item.style.transform = 'scale(0.88)';
+                        item.style.opacity = '0.4';
+                        item.style.filter = 'blur(0.5px)';
+                        item.style.zIndex = '1';
+                        if (title) title.style.opacity = '0.4';
+                    }
+                });
+            }
+
+            // 3. NAVIGASI TOMBOL
+            nextBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex++;
+                updateCarousel(true);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex--;
+                updateCarousel(true);
+            });
+
+            // Klik langsung gambar samping untuk geser ke tengah
+            allItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    if (isTransitioning || index === currentIndex) return;
+                    isTransitioning = true;
+                    currentIndex = index;
+                    updateCarousel(true);
+                });
+            });
+
+            // 4. EFEK TELEPORTASI DIAM-DIAM KETIKA MENCAPAI UJUNG (Seamless Jump)
+            track.addEventListener('transitionend', (e) => {
+                if (e.target !== track) return;
+                isTransitioning = false;
+
+                // Jika sampai di Set Sesudah -> Lompat balik ke Set Utama tanpa animasi
+                if (currentIndex >= 2 * N) {
+                    currentIndex = currentIndex - N;
+                    updateCarousel(false);
+                } 
+                // Jika sampai di Set Sebelum -> Lompat maju ke Set Utama tanpa animasi
+                else if (currentIndex < N) {
+                    currentIndex = currentIndex + N;
+                    updateCarousel(false);
+                }
+            });
+
+            // Inisialisasi posisi awal & penyesuaian layar (resize)
+            updateCarousel(false);
+            window.addEventListener('resize', () => updateCarousel(false));
+        });
+            </script>
+
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+
+</body>
+</html>
